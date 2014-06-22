@@ -1,0 +1,92 @@
+---
+title       : BMI Calculator - Shiny Web App 
+subtitle    : 
+author      : P.L.
+job         : 
+framework   : io2012        # {io2012, html5slides, shower, dzslides, ...}
+highlighter : highlight.js  # {highlight.js, prettify, highlight}
+hitheme     : tomorrow      # 
+widgets     : []            # {mathjax, quiz, bootstrap}
+mode        : selfcontained # {standalone, draft}
+knit        : slidify::knit2slides
+---
+
+## BMI Calculator - Usage
+
+This Web App is calculating the BMI and the category of weight for a user.
+
+The user enters the values for:
+
+    1. name
+    2. weight in kg
+    3. height in cm
+
+and the application is calculating the bmi and the category of weight.
+
+To enter the name the user just types the name in the name textbox.
+
+To enter the weight and height the user uses the sliders for weight and height.
+
+---
+
+## BMI Calculator - Formula
+
+To calculate the bmi the app is using the following formula:
+
+    bmi = (weight)/((height/100)^2)
+
+To get the weight category the app is using the following table:
+
+| BMI       | Weight category |
+|-----------|-----------------|
+|< 18.5     | underweight     |
+|< 25	    | normal weight   |
+|< 30   	| overweight      |
+|>= 30	    | obesity         |
+
+---
+
+## BMI Calculator - R functions
+
+To calculate bmi and category the app is using the following R functions:
+
+```{r}
+bmiCalculator <- function(weight, height) {
+    weight/((height/100)^2)
+}
+category<-function(bmi){
+    if(bmi<18.5) "underweight"
+    if(bmi<25)   "normal weight"
+    if(bmi<30)   "overweight"
+    if(bmi>=18.5)"obese"
+}
+```
+
+--- 
+
+## BMI Calculator - Examples
+
+```{r echo=FALSE}
+bmiCalculator <- function(weight, height) {
+    round(weight/((height/100)^2),2)
+}
+category<-function(bmi){
+    if(bmi<18.5) "underweight"
+    else if(bmi<25)"normal weight"
+    else if(bmi<30)"overweight"
+    else if(bmi>=18.5)"obese"
+}
+w<-c(50,60,80,100)
+h<-c(170,170,170,170)
+bmi<-bmiCalculator(w,h)
+```
+
+1. A patient with a weight of `r w[1]` and height of `r h[1]`, has a BMI of `r bmi[1]` and is `r category(bmi[1])`.
+
+2. A patient with a weight of `r w[2]` and height of `r h[2]`, has a BMI of `r bmi[2]` and is `r category(bmi[2])`.
+
+3. A patient with a weight of `r w[3]` and height of `r h[3]`, has a BMI of `r bmi[3]` and is `r category(bmi[3])`.
+
+4. A patient with a weight of `r w[4]` and height of `r h[4]`, has a BMI of `r bmi[4]` and is `r category(bmi[4])`.
+
+---

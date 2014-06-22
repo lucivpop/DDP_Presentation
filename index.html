@@ -1,0 +1,201 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>BMI Calculator - Shiny Web App</title>
+  <meta charset="utf-8">
+  <meta name="description" content="BMI Calculator - Shiny Web App">
+  <meta name="author" content="P.L.">
+  <meta name="generator" content="slidify" />
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta http-equiv="X-UA-Compatible" content="chrome=1">
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/default.css" media="all" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/phone.css" 
+    media="only screen and (max-device-width: 480px)" >
+  <link rel="stylesheet" href="libraries/frameworks/io2012/css/slidify.css" >
+  <link rel="stylesheet" href="libraries/highlighters/highlight.js/css/tomorrow.css" />
+  <base target="_blank"> <!-- This amazingness opens all links in a new tab. -->  
+  
+  <!-- Grab CDN jQuery, fall back to local if offline -->
+  <script src="http://ajax.aspnetcdn.com/ajax/jQuery/jquery-1.7.min.js"></script>
+  <script>window.jQuery || document.write('<script src="libraries/widgets/quiz/js/jquery.js"><\/script>')</script> 
+  <script data-main="libraries/frameworks/io2012/js/slides" 
+    src="libraries/frameworks/io2012/js/require-1.0.8.min.js">
+  </script>
+  
+  
+
+</head>
+<body style="opacity: 0">
+  <slides class="layout-widescreen">
+    
+    <!-- LOGO SLIDE -->
+        <slide class="title-slide segue nobackground">
+  <hgroup class="auto-fadein">
+    <h1>BMI Calculator - Shiny Web App</h1>
+    <h2></h2>
+    <p>P.L.<br/></p>
+  </hgroup>
+  <article></article>  
+</slide>
+    
+
+    <!-- SLIDES -->
+    <slide class="" id="slide-1" style="background:;">
+  <hgroup>
+    <h2>BMI Calculator - Usage</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>This Web App is calculating the BMI and the category of weight for a user.</p>
+
+<p>The user enters the values for:</p>
+
+<pre><code>1. name
+2. weight in kg
+3. height in cm
+</code></pre>
+
+<p>and the application is calculating the bmi and the category of weight.</p>
+
+<p>To enter the name the user just types the name in the name textbox.</p>
+
+<p>To enter the weight and height the user uses the sliders for weight and height.</p>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-2" style="background:;">
+  <hgroup>
+    <h2>BMI Calculator - Formula</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>To calculate the bmi the app is using the following formula:</p>
+
+<pre><code>bmi = (weight)/((height/100)^2)
+</code></pre>
+
+<p>To get the weight category the app is using the following table:</p>
+
+<table><thead>
+<tr>
+<th>BMI</th>
+<th>Weight category</th>
+</tr>
+</thead><tbody>
+<tr>
+<td>&lt; 18.5</td>
+<td>underweight</td>
+</tr>
+<tr>
+<td>&lt; 25</td>
+<td>normal weight</td>
+</tr>
+<tr>
+<td>&lt; 30</td>
+<td>overweight</td>
+</tr>
+<tr>
+<td>&gt;= 30</td>
+<td>obesity</td>
+</tr>
+</tbody></table>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-3" style="background:;">
+  <hgroup>
+    <h2>BMI Calculator - R functions</h2>
+  </hgroup>
+  <article data-timings="">
+    <p>To calculate bmi and category the app is using the following R functions:</p>
+
+<pre><code class="r">bmiCalculator &lt;- function(weight, height) {
+    weight/((height/100)^2)
+}
+category&lt;-function(bmi){
+    if(bmi&lt;18.5) &quot;underweight&quot;
+    if(bmi&lt;25)   &quot;normal weight&quot;
+    if(bmi&lt;30)   &quot;overweight&quot;
+    if(bmi&gt;=18.5)&quot;obese&quot;
+}
+</code></pre>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-4" style="background:;">
+  <hgroup>
+    <h2>BMI Calculator - Examples</h2>
+  </hgroup>
+  <article data-timings="">
+    <ol>
+<li><p>A patient with a weight of 50 and height of 170, has a BMI of 17.3 and is underweight.</p></li>
+<li><p>A patient with a weight of 60 and height of 170, has a BMI of 20.76 and is normal weight.</p></li>
+<li><p>A patient with a weight of 80 and height of 170, has a BMI of 27.68 and is overweight.</p></li>
+<li><p>A patient with a weight of 100 and height of 170, has a BMI of 34.6 and is obese.</p></li>
+</ol>
+
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+<slide class="" id="slide-5" style="background:;">
+  <article data-timings="">
+    
+  </article>
+  <!-- Presenter Notes -->
+</slide>
+
+    <slide class="backdrop"></slide>
+  </slides>
+  <div class="pagination pagination-small" id='io2012-ptoc' style="display:none;">
+    <ul>
+      <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=1 title='BMI Calculator - Usage'>
+         1
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=2 title='BMI Calculator - Formula'>
+         2
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=3 title='BMI Calculator - R functions'>
+         3
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=4 title='BMI Calculator - Examples'>
+         4
+      </a>
+    </li>
+    <li>
+      <a href="#" target="_self" rel='tooltip' 
+        data-slide=5 title=''>
+         5
+      </a>
+    </li>
+  </ul>
+  </div>  <!--[if IE]>
+    <script 
+      src="http://ajax.googleapis.com/ajax/libs/chrome-frame/1/CFInstall.min.js">  
+    </script>
+    <script>CFInstall.check({mode: 'overlay'});</script>
+  <![endif]-->
+</body>
+  <!-- Load Javascripts for Widgets -->
+  
+  <!-- LOAD HIGHLIGHTER JS FILES -->
+  <script src="libraries/highlighters/highlight.js/highlight.pack.js"></script>
+  <script>hljs.initHighlightingOnLoad();</script>
+  <!-- DONE LOADING HIGHLIGHTER JS FILES -->
+   
+  </html>
