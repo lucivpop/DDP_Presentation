@@ -76,5 +76,3 @@ category<-function(bmi){
 3. A patient with a weight of 80 and height of 170, has a BMI of 27.68 and is overweight.
 
 4. A patient with a weight of 100 and height of 170, has a BMI of 34.6 and is obese.
-
----

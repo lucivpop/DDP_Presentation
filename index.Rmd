@@ -88,5 +88,3 @@ bmi<-bmiCalculator(w,h)
 3. A patient with a weight of `r w[3]` and height of `r h[3]`, has a BMI of `r bmi[3]` and is `r category(bmi[3])`.
 
 4. A patient with a weight of `r w[4]` and height of `r h[4]`, has a BMI of `r bmi[4]` and is `r category(bmi[4])`.
-
----
